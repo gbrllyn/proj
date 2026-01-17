@@ -6,6 +6,23 @@ A web application for computing standard matrices for linear transformations. Bu
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?logo=vite)
 
+<h2 align="center">Project Team</h2>
+
+<p align="center"><strong>Tester & Linear Algebra Specialist</strong><br>
+Kurt Hann Lucero</p>
+
+<p align="center"><strong>Backend Developer</strong><br>
+Marc Lowel Castillo<br>
+Gemicah Gem Espiritu</p>
+
+<p align="center"><strong>Frontend Developer / UI/UX</strong><br>
+Wiyana Gabrielle Epetia</p>
+
+<p align="center"><strong>Documentation Writer</strong><br>
+Hannah Samantha Regencia<br>
+Gemicah Gem Espiritu</p>
+
+
 ## 📖 Overview
 
 This calculator helps you find the **standard matrix** $A$ for a linear transformation $T: \mathbb{R}^n \to \mathbb{R}^m$ given:
