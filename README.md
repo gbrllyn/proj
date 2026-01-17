@@ -22,33 +22,112 @@ Wiyana Gabrielle Epetia</p>
 Hannah Samantha Regencia<br>
 Gemicah Gem Espiritu</p>
 
+---
 
-## 📖 Overview
+## 📘 Project Overview
 
-This calculator helps you find the **standard matrix** $A$ for a linear transformation $T: \mathbb{R}^n \to \mathbb{R}^m$ given:
-- A set of basis vectors for $\mathbb{R}^n$
-- The images of those basis vectors under $T$
+The **Standard Matrix Finder** is an application developed to help users compute the **standard matrix** of a linear transformation.
 
-The standard matrix satisfies: $T(\mathbf{x}) = A\mathbf{x}$ for all $\mathbf{x} \in \mathbb{R}^n$
+The application allows users to input a basis for ℝ<sup>n</sup> along with the corresponding images of these vectors in ℝ<sup>m</sup> under a linear transformation **T**.  
+Based on the given inputs, the system computes and displays the standard matrix that represents the transformation.
 
-### Mathematical Background
+This tool is designed to make working with linear transformations more convenient and easier to understand, especially for cases where  
+**n, m ≤ 5**.
 
-Given:
-- Matrix $B$ with basis vectors as columns
-- Matrix $T_B$ with corresponding images as columns
+---
 
-The standard matrix is computed as: $A = T_B \cdot B^{-1}$
+## 📐 Mathematical Background
 
-## ✨ Features
+To find the standard matrix **A** for a linear transformation from ℝ<sup>n</sup> to ℝ<sup>m</sup> such that:
 
-- **Flexible Dimensions**: Support for transformations between any $\mathbb{R}^n$ and $\mathbb{R}^m$ (dimensions 2-5)
-- **Interactive Input**: Easy-to-use interface for entering basis vectors and their images
-- **Step-by-Step Solutions**: Detailed computation steps showing the mathematical process
-- **Built-in Examples**: Pre-loaded examples including:
-  - 90° rotation in $\mathbb{R}^2$
-  - Reflection across xy-plane in $\mathbb{R}^3$
-- **Matrix Operations**: Includes matrix inversion using Gauss-Jordan elimination
-- **Clean Display**: Formatted output with fraction support for cleaner results
+<p align="center">
+<strong>T(x) = Ax</strong> &nbsp; for all &nbsp; <strong>x ∈ ℝ<sup>n</sup></strong>
+</p>
+
+we use the relationship between **basis vectors** and their **images** under the transformation.
+
+---
+
+### Given Information
+
+The calculation requires two primary pieces of data:
+
+- **Matrix B**  
+  A matrix whose columns are the chosen basis vectors of ℝ<sup>n</sup>
+
+- **Matrix T<sub>B</sub>**  
+  A matrix whose columns are the images of those basis vectors under the transformation **T**
+
+---
+
+### Formula
+
+<p align="center">
+<strong>A = T<sub>B</sub> × B<sup>−1</sup></strong>
+</p>
+
+Where:
+- **B<sup>−1</sup>** is the inverse of the basis matrix **B**
+- **T<sub>B</sub>** contains the transformed basis vectors
+
+---
+
+## ⚙️ Computational Process
+
+To arrive at the final result, the application performs the following steps:
+
+1. **Matrix Inversion**  
+   - Computes **B<sup>−1</sup>** using **Gauss–Jordan Elimination**
+
+2. **Matrix Multiplication**  
+   - Multiplies **T<sub>B</sub>** by **B<sup>−1</sup>** to obtain the standard matrix **A**
+
+3. **Fraction Formatting**  
+   - Displays results using fractions instead of decimal approximations for clean and precise mathematical output
+
+---
+
+## 🔑 Key Features
+
+### Flexible Dimensional Support
+The system supports linear transformations between ℝ<sup>n</sup> and ℝ<sup>m</sup> for values ranging from **2 to 5**.  
+This allows exploration of both square and non-square transformations across a wide range of linear algebra problems.
+
+---
+
+### Interactive Input
+An intuitive and user-friendly interface allows users to easily input:
+- Basis vectors
+- Corresponding images under the transformation **T**
+
+This minimizes manual errors and makes the tool accessible even to users with minimal prior experience in linear algebra software.
+
+---
+
+### Clean and Readable Output Display
+Results are presented in a well-formatted layout with support for **fractional values** instead of decimal approximations.  
+This ensures mathematical accuracy and produces clean, professional outputs suitable for academic use.
+
+---
+
+### Advanced Matrix Operations
+Core matrix operations are integrated into the system, including:
+- Matrix inversion using the **Gauss–Jordan elimination** method
+- Step-by-step display of the elimination process for transparency and instructional value
+
+---
+
+### Built-in Sample Transformations
+The application includes pre-loaded example problems such as:
+
+- **90° rotation** in ℝ<sup>2</sup>
+- **Reflection across the xy-plane** in ℝ<sup>3</sup>
+
+---
+
+### Step-by-Step Solution Breakdown
+Each computation is presented in a detailed, sequential manner, clearly showing how the final transformation matrix is derived.  
+Intermediate steps are displayed to help users understand the underlying mathematical process—not just the final result.
 
 ## 🚀 Getting Started
 
@@ -85,22 +164,72 @@ npm run build
 
 The built files will be in the `dist/` directory.
 
-## 🎯 Usage
+## How to Use the Standard Matrix Finder
 
-1. **Select Dimensions**: Choose the domain dimension $n$ and codomain dimension $m$
-2. **Enter Basis Vectors**: Input the basis vectors for $\mathbb{R}^n$
-3. **Enter Images**: For each basis vector, enter its image under the transformation $T$
-4. **Compute**: Click "Compute Standard Matrix" to calculate the result
-5. **View Steps**: Toggle "Show Computation Steps" to see the detailed solution
+### 1. Understand Your Linear Transformation
+Before using the tool, identify your linear transformation $T$. It should be in the form:
+* **Input (Domain):** A vector in $R^n$ (dimension n)
+    * Example: For $R^3$, vectors look like $(x_1, x_2, x_3)$
+* **Output (Codomain):** A vector in $R^m$ (dimension m)
+    * Example: For $R^2$, outputs look like $(y_1, y_2)$
 
-### Example: 90° Rotation
+### 2. Select Dimensions
+Choose the appropriate dimensions for your transformation:
+* **Domain dimension (n):** Select from 1 to 5
+    * This is the dimension of your input vectors.
+    * Example: If $T$ takes 3-component vectors, select $n = 3$.
+* **Codomain dimension (m):** Select from 1 to 5
+    * This is the dimension of your output vectors.
+    * Example: If $T$ produces 2-component vectors, select $m = 2$.
 
-For a 90° counterclockwise rotation in $\mathbb{R}^2$:
-- $T(\mathbf{e}_1) = T\begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}0\\1\end{pmatrix}$
-- $T(\mathbf{e}_2) = T\begin{pmatrix}0\\1\end{pmatrix} = \begin{pmatrix}-1\\0\end{pmatrix}$
+### 3. Enter Basis Vectors
+The standard matrix is constructed by applying your transformation to each standard basis vector:
+* **For $R^2$ space:** $e_1 = (1, 0)$ and $e_2 = (0, 1)$
+* **For $R^3$ space:** $e_1 = (1, 0, 0)$, $e_2 = (0, 1, 0)$, and $e_3 = (0, 0, 1)$
 
-The standard matrix is:
-$$A = \begin{pmatrix}0 & -1\\1 & 0\end{pmatrix}$$
+**How to enter:**
+1.  For each basis vector $e_i$, calculate $T(e_i)$.
+2.  Enter the components of the result into the corresponding fields.
+
+### 4. Compute
+Once all basis vector transformations are entered:
+1.  Click the **"Compute Standard Matrix"** button. The tool will construct the matrix where:
+    * Column 1 = $T(e_1)$
+    * Column 2 = $T(e_2)$
+    * Column 3 = $T(e_3)$
+    * And so on...
+
+### 5. Solutions
+Toggle "Show Computation Steps" to see the detailed solution:
+* How each basis vector was transformed.
+* Step-by-step matrix construction.
+* The logical process behind the calculation.
+* Detailed explanations of each step.
+  
+### 6. Verification:
+
+Once you have your standard matrix A, verify it works by checking:
+
+$$
+A \times [x_1, x_2, ..., x_n]^T = T(x_1, x_2, ..., x_n)
+$$
+
+**How to verify:**
+
+1. Choose any test vector $(x_1, x_2, ..., x_n)$
+2. Multiply your standard matrix A by this vector
+3. Apply the original transformation T to the same vector
+4. Both results should be identical
+
+## Transformation Types:
+
+The tool can help you find standard matrices for:
+
+* **Rotations:** Rotating vectors by an angle
+* **Reflections:** Mirroring vectors across a line or plane
+* **Projections:** Projecting vectors onto a subspace.
+* **Scaling:** Stretching or shrinking vectors.
+* **Shearing:** Slanting transformations.
 
 ## 📁 Project Structure
 
