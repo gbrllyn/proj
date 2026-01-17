@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.matrixWrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+.bracketLeft,
+.bracketRight {
+  width: 8px;
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.bracketLeft {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.bracketRight {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cell {
+  min-width: 3rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--cell-bg);
+  border-radius: 6px;
+}
+
+@media (max-width: 480px) {
+  .cell {
+    min-width: 2.5rem;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .row {
+    gap: 0.5rem;
+  }
+}
